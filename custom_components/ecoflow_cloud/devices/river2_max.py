@@ -48,7 +48,9 @@ class River2Max(BaseDevice):
             OutMilliVoltSensorEntity(client, "inv.invOutVol", const.AC_OUT_VOLT),
 
             InWattsSensorEntity(client, "pd.typecChaWatts", const.TYPE_C_IN_POWER),
-            InWattsSensorEntity(client, "mppt.inWatts", const.SOLAR_IN_POWER),
+            InWattsSolarSensorEntity(client, "mppt.inWatts", const.SOLAR_IN_POWER),
+            InVoltSolarSensorEntity(client, "mppt.inVol", const.SOLAR_IN_VOLTAGE),
+            InAmpSolarSensorEntity(client, "mppt.inAmp", const.SOLAR_IN_CURRENT),
 
 
             OutWattsSensorEntity(client, "pd.carWatts", const.DC_OUT_POWER),
