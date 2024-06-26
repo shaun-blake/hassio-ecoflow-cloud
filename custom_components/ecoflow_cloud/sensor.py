@@ -142,11 +142,6 @@ class InMilliVoltSensorEntity(MilliVoltSensorEntity):
     _attr_icon = "mdi:transmission-tower-import"
     _attr_suggested_display_precision = 0
 
-class InDecivoltSensorEntity(DecivoltSensorEntity):
-    _attr_icon = "mdi:transmission-tower-import"
-    _attr_suggested_display_precision = 0
-
-
 class OutMilliVoltSensorEntity(MilliVoltSensorEntity):
     _attr_icon = "mdi:transmission-tower-export"
     _attr_suggested_display_precision = 0
@@ -161,6 +156,10 @@ class DecivoltSensorEntity(BaseSensorEntity):
 
     def _update_value(self, val: Any) -> bool:
         return super()._update_value(int(val) / 10)
+
+class InDecivoltSensorEntity(DecivoltSensorEntity):
+    _attr_icon = "mdi:transmission-tower-import"
+    _attr_suggested_display_precision = 0
 
 
 class CentivoltSensorEntity(DecivoltSensorEntity):
