@@ -171,6 +171,7 @@ class AmpSensorEntity(BaseSensorEntity):
     _attr_device_class = SensorDeviceClass.CURRENT
     _attr_entity_category = EntityCategory.DIAGNOSTIC
     _attr_native_unit_of_measurement = UnitOfElectricCurrent.MILLIAMPERE
+    _attr_suggested_unit_of_measurement = UnitOfElectricCurrent.AMPERE
     _attr_state_class = SensorStateClass.MEASUREMENT
     _attr_native_value = 0
 
