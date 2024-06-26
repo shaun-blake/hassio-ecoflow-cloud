@@ -142,7 +142,7 @@ class InMilliVoltSensorEntity(MilliVoltSensorEntity):
     _attr_icon = "mdi:transmission-tower-import"
     _attr_suggested_display_precision = 0
 
-class InDeciVoltSensorEntity(DeciVoltSensorEntity):
+class InDecivoltSensorEntity(DecivoltSensorEntity):
     _attr_icon = "mdi:transmission-tower-import"
     _attr_suggested_display_precision = 0
 
