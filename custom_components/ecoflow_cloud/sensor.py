@@ -185,11 +185,6 @@ class DeciampSensorEntity(BaseSensorEntity):
     def _update_value(self, val: Any) -> bool:
         return super()._update_value(int(val) / 10)
 
-class MilliampSensorEntity(DeciampSensorEntity):
-    def _update_value(self, val: Any) -> bool:
-        return super()._update_value(int(val) / 100)
-
-
 class WattsSensorEntity(BaseSensorEntity):
     _attr_entity_category = EntityCategory.DIAGNOSTIC
     _attr_device_class = SensorDeviceClass.POWER
@@ -266,9 +261,6 @@ class InAmpSensorEntity(AmpSensorEntity):
     _attr_icon = "mdi:transmission-tower-import"
 
 class InAmpSolarSensorEntity(AmpSensorEntity):
-    _attr_icon = "mdi:solar-power"
-
-class InMilliampSolarSensorEntity(MilliampSensorEntity):
     _attr_icon = "mdi:solar-power"
 
 class InDeciampSolarSensorEntity(DeciampSensorEntity):

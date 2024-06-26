@@ -9,7 +9,7 @@ from ..number import ChargingPowerEntity, MaxBatteryLevelEntity, MinBatteryLevel
 from ..select import DictSelectEntity, TimeoutDictSelectEntity
 from ..sensor import LevelSensorEntity, RemainSensorEntity, TempSensorEntity, \
     CyclesSensorEntity, InWattsSensorEntity, OutWattsSensorEntity, VoltSensorEntity, InAmpSensorEntity, \
-    InVoltSensorEntity, InWattsSolarSensorEntity, InMilliVoltSolarSensorEntity, InMilliampSolarSensorEntity, QuotasStatusSensorEntity, MilliVoltSensorEntity, InMilliVoltSensorEntity, \
+    InVoltSensorEntity, InWattsSolarSensorEntity, InMilliVoltSolarSensorEntity, InAmpSolarSensorEntity, QuotasStatusSensorEntity, MilliVoltSensorEntity, InMilliVoltSensorEntity, \
     OutMilliVoltSensorEntity, ChargingStateSensorEntity, CapacitySensorEntity
 from ..switch import EnabledEntity
 
@@ -50,7 +50,7 @@ class River2Max(BaseDevice):
             InWattsSensorEntity(client, "pd.typecChaWatts", const.TYPE_C_IN_POWER),
             InWattsSolarSensorEntity(client, "mppt.inWatts", const.SOLAR_IN_POWER),
             InMilliVoltSolarSensorEntity(client, "mppt.inVol", const.SOLAR_IN_VOLTAGE),
-            InMilliampSolarSensorEntity(client, "mppt.inAmp", const.SOLAR_IN_CURRENT),
+            InAmpSolarSensorEntity(client, "mppt.inAmp", const.SOLAR_IN_CURRENT),
 
 
             OutWattsSensorEntity(client, "pd.carWatts", const.DC_OUT_POWER),
