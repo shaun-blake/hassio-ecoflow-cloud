@@ -250,7 +250,7 @@ class InVoltSensorEntity(VoltSensorEntity):
 class InVoltSolarSensorEntity(VoltSensorEntity):
     _attr_icon = "mdi:solar-power"
 
-class InMillivoltSolarSensorEntity(InMilliVoltSensorEntity):
+class InMilliVoltSolarSensorEntity(InMilliVoltSensorEntity):
     _attr_icon = "mdi:solar-power"
 
 class InDecivoltSolarSensorEntity(InDecivoltSensorEntity):
