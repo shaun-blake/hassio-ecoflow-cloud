@@ -142,6 +142,10 @@ class InMilliVoltSensorEntity(MilliVoltSensorEntity):
     _attr_icon = "mdi:transmission-tower-import"
     _attr_suggested_display_precision = 0
 
+class InDeciVoltSensorEntity(DeciVoltSensorEntity):
+    _attr_icon = "mdi:transmission-tower-import"
+    _attr_suggested_display_precision = 0
+
 
 class OutMilliVoltSensorEntity(MilliVoltSensorEntity):
     _attr_icon = "mdi:transmission-tower-export"
@@ -181,6 +185,10 @@ class DeciampSensorEntity(BaseSensorEntity):
 
     def _update_value(self, val: Any) -> bool:
         return super()._update_value(int(val) / 10)
+
+class MilliampSensorEntity(DeciampSensorEntity):
+    def _update_value(self, val: Any) -> bool:
+        return super()._update_value(int(val) / 100)
 
 
 class WattsSensorEntity(BaseSensorEntity):
@@ -222,8 +230,8 @@ class InWattsSensorEntity(WattsSensorEntity):
 class InWattsSolarSensorEntity(InWattsSensorEntity):
     _attr_icon = "mdi:solar-power"
 
-    def _update_value(self, val: Any) -> bool:
-        return super()._update_value(int(val) / 10)
+class InDeciwattsSolarSensorEntity(DeciwattsSensorEntity):
+    _attr_icon = "mdi:solar-power"
 
 
 class OutWattsSensorEntity(WattsSensorEntity):
@@ -243,8 +251,11 @@ class InVoltSensorEntity(VoltSensorEntity):
 class InVoltSolarSensorEntity(VoltSensorEntity):
     _attr_icon = "mdi:solar-power"
 
-    def _update_value(self, val: Any) -> bool:
-        return super()._update_value(int(val) / 10)
+class InMilliVoltSolarSensorEntity(InMilliVoltSensorEntity):
+    _attr_icon = "mdi:solar-power"
+
+class InDecivoltSolarSensorEntity(InDecivoltSensorEntity):
+    _attr_icon = "mdi:solar-power"
 
 class OutVoltDcSensorEntity(VoltSensorEntity):
     _attr_icon = "mdi:transmission-tower-export"
@@ -258,8 +269,11 @@ class InAmpSensorEntity(AmpSensorEntity):
 class InAmpSolarSensorEntity(AmpSensorEntity):
     _attr_icon = "mdi:solar-power"
 
-    def _update_value(self, val: Any) -> bool:
-        return super()._update_value(int(val) * 10)
+class InMilliAmpSolarSensorEntity(MilliampSensorEntity):
+    _attr_icon = "mdi:solar-power"
+
+class InDeciampSolarSensorEntity(DeciampSensorEntity):
+    _attr_icon = "mdi:solar-power"
 
 class InEnergySensorEntity(EnergySensorEntity):
     _attr_icon = "mdi:transmission-tower-import"

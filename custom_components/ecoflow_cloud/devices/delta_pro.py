@@ -8,7 +8,7 @@ from ..number import ChargingPowerEntity, MaxBatteryLevelEntity, MinBatteryLevel
 from ..select import DictSelectEntity, TimeoutDictSelectEntity
 from ..sensor import LevelSensorEntity, WattsSensorEntity, RemainSensorEntity, TempSensorEntity, \
     CyclesSensorEntity, InWattsSensorEntity, OutWattsSensorEntity, OutWattsDcSensorEntity, VoltSensorEntity, \
-    InWattsSolarSensorEntity, InVoltSolarSensorEntity, InAmpSolarSensorEntity, OutVoltDcSensorEntity, \
+    InDeciwattsSolarSensorEntity, InDecivoltSolarSensorEntity, InDeciampSolarSensorEntity, OutVoltDcSensorEntity, \
     StatusSensorEntity, InEnergySensorEntity, OutEnergySensorEntity, MilliVoltSensorEntity, InMilliVoltSensorEntity, \
     OutMilliVoltSensorEntity, AmpSensorEntity, CapacitySensorEntity
 from ..switch import BeeperEntity, EnabledEntity
@@ -42,9 +42,9 @@ class DeltaPro(BaseDevice):
             InMilliVoltSensorEntity(client, "inv.acInVol", const.AC_IN_VOLT),
             OutMilliVoltSensorEntity(client, "inv.invOutVol", const.AC_OUT_VOLT),
 
-            InWattsSolarSensorEntity(client, "mppt.inWatts", const.SOLAR_IN_POWER),
-            InVoltSolarSensorEntity(client, "mppt.inVol", const.SOLAR_IN_VOLTAGE),
-            InAmpSolarSensorEntity(client, "mppt.inAmp", const.SOLAR_IN_CURRENT),
+            InDeciwattsSolarSensorEntity(client, "mppt.inWatts", const.SOLAR_IN_POWER),
+            InDecivoltSolarSensorEntity(client, "mppt.inVol", const.SOLAR_IN_VOLTAGE),
+            InDeciampSolarSensorEntity(client, "mppt.inAmp", const.SOLAR_IN_CURRENT),
 
             OutWattsDcSensorEntity(client, "mppt.outWatts", const.DC_OUT_POWER),
             OutVoltDcSensorEntity(client, "mppt.outVol", const.DC_OUT_VOLTAGE),
